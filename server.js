@@ -5,7 +5,8 @@ const path = require('path');
 const hbs = exphbs.create({});
 const session = require('express-session');
 
-const sequelize = require("./config/config")
+const sequelize = require("./config/config");
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // Sets up the Express App
 const app = express();
@@ -16,6 +17,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(require('./controllers/index'));
 
 // configure and link a session object with the sequelize store
+
+
 
 const sess = {
   secret:'Does it Matter',
