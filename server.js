@@ -14,11 +14,9 @@ const PORT = process.env.PORT || 3001;
 
 // letting the application know where the static files are (public/css/jss)
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(require('./controllers/index'));
+app.use(require('./controllers/'));
 
 // configure and link a session object with the sequelize store
-
-
 
 const sess = {
   secret:'Does it Matter',
